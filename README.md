@@ -16,3 +16,30 @@ How to attempt this challenge:
 4) Set your new repo as the origin: `git remote set-url origin ${your repo url}`
 5) Push your solution to your repo
 You must follow these steps for your solution to be accepted -- forks or other methods will not be considered.
+
+## Solution
+```
+1. git checkout add-echo
+2. git rebase master
+3. git checout master
+4. git rebase add-echo
+```
+The commit from add-echo is now in master.
+```
+5. git checkout add-reverse
+6. git rebase master
+```
+After the 6 command we had conflicts, so I resolved the conflicts according to both branches.
+```
+7. git add .
+8. git rebase --continue
+```
+After resolving conflicts, we need to stage the changes and continue with rebasing
+```
+9.  git checkout master
+10. git rebase add-reverse
+```
+Now master has two more commits, one from each add-reverse and add-echo.
+```
+11. git push
+```
